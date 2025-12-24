@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyfinity - Pharmaceutical Excellence</title>
+    <style>
+        :root {
+            --primary-color: #1abc9c;
+            --secondary-color: #16a085;
+            --dark-color: #1a1a1a;
+            --light-color: #ecf0f1;
+            --text-color: #2c3e50;
+            --accent-color: #e74c3c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #16a085 100%);
+            color: white;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 188, 156, 0.6), rgba(22, 160, 133, 0.65)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f5f5f5" width="1200" height="600"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 2rem 2rem;
+            text-align: center;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            animation: slideDown 0.6s ease;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 0.8rem 6rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            white-space: nowrap;
+            width: auto;
+            max-width: fit-content;
+            margin: 0 auto;
+        }
+
+        .cta-button:hover {
+            background: #e85a2f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* About Section */
+        .about {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .about p {
+            margin-bottom: 1rem;
+            text-align: justify;
+            color: #555;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Products Section */
+        .products {
+            background: var(--light-color);
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+        }
+
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .products h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            background: linear-gradient(135deg, #ecf0f1, #d5f4e6);
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-category {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .product-description {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .product-specs {
+            font-size: 0.85rem;
+            color: #888;
+            border-top: 1px solid #eee;
+            padding-top: 0.8rem;
+        }
+
+        /* Services Section */
+        .services {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 2rem;
+        }
+
+        .services h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-item {
+            background: linear-gradient(135deg, var(--light-color), white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid var(--secondary-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+        }
+
+        .service-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, rgba(26, 188, 156, 0.3), rgba(22, 160, 133, 0.35));
+            color: white;
+            padding: 1rem 2rem;
+            margin: 3rem 0;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 1.2rem;
+            color: var(--text-color);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 2rem;
+            border-radius: 10px;
+            grid-column: 1 / -1;
+            max-width: 600px;
+            margin: 0 auto;
+            width: 100%;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: white;
+            color: var(--text-color);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background: #f9f9f9;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .form-submit:hover {
+            background: #e85a2f;
+            transform: scale(1.02);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-links {
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                padding: 1.5rem 1.5rem;
+                min-height: 240px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                grid-column: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <nav>
+            <div class="logo">NYFINITY</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Nyfinity Pharmaceuticals</h1>
+        <p>Advancing Healthcare Through Innovation and Excellence</p>
+        <button class="cta-button" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get in Touch</button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div>
+            <h2>About Nyfinity</h2>
+            <p>
+                Nyfinity Pharmaceuticals is a leading pharmaceutical company dedicated to developing high-quality medications and healthcare solutions. With over 15 years of experience in the industry, we have established ourselves as a trusted name in pharmaceutical manufacturing and distribution across India and South Asia.
+            </p>
+            <p>
+                Our commitment to excellence, rigorous quality control, and innovative research enables us to deliver products that meet international standards (ISO 9001:2015, WHO-GMP certified). We focus on creating effective treatments for various health conditions while maintaining the highest ethical standards and regulatory compliance.
+            </p>
+            <p>
+                At Nyfinity, we believe that healthcare is a fundamental right, and we work tirelessly to make quality medicines accessible to everyone. Our state-of-the-art manufacturing facilities and experienced team of over 500 professionals ensure timely delivery of superior pharmaceutical products.
+            </p>
+            <p>
+                <strong>Key Highlights:</strong><br>
+                ✓ WHO-GMP Certified Manufacturing Facilities<br>
+                ✓ ISO 9001:2015 Certified Quality Management<br>
+                ✓ 15+ Years of Industry Excellence<br>
+                ✓ 500+ Dedicated Professionals<br>
+                ✓ Presence in 50+ Cities Across India
+            </p>
+        </div>
+        <div class="about-image">
+            <div>
+                <div style="font-size: 3rem; margin-bottom: 0.5rem;">💊</div>
+                <p>Quality Pharmaceutical Solutions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="products-container">
+            <h2>Our Products</h2>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/997a54ce-3d61-424e-a316-eb0edaad0464.png" alt="Nyfen-500 Pain Relief">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Pain Relief</div>
+                        <div class="product-name">Nyfen-500</div>
+                        <p class="product-description">
+                            Advanced pain relief medication for mild to moderate pain. Fast-acting formula with extended relief.
+                        </p>
+                        <div class="product-specs">
+                            <strong>Active Ingredient:</strong> Ibuprofen 500mg<br>
+                            <strong>Form:</strong> Tablet<br>
+                            <strong>Packaging:</strong> Blister pack of 10
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/289c197f-feb3-4d3c-9230-281d624abb4a.png" alt="Allerex-Plus Antihistamine">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Antihistamine</div>
+                        <div class="product-name">Allerex-Plus</div>
+                        <p class="product-description">
+                            Effective relief from allergic reactions and seasonal allergies. Non-drowsy formula for daytime use.
+                        </p>
+                        <div class="product-specs">
+                            <strong>Active Ingredient:</strong> Cetirizine 10mg<br>
+                            <strong>Form:</strong> Tablet<br>
+                            <strong>Packaging:</strong> Strip of 14 tablets
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/445f99c7-3fce-4f7c-a9e8-0435cbdf1d81.png" alt="Nycillin-250 Antibiotic">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Antibiotic</div>
+                        <div class="product-name">Nycillin-250</div>
+                        <p class="product-description">
+                            Broad-spectrum antibiotic for bacterial infections. Prescribed by healthcare professionals worldwide.
+                        </p>
+                        <div class="product-specs">
+                            <strong>Active Ingredient:</strong> Amoxicillin 250mg<br>
+                            <strong>Form:</strong> Capsule<br>
+                            <strong>Packaging:</strong> Blister pack of 6 capsules
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/027054c4-026c-4854-8093-84e49d51f577.png" alt="FeverGone-Syrup Antipyretic">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Antipyretic</div>
+                        <div class="product-name">FeverGone-Syrup</div>
+                        <p class="product-description">
+                            Liquid formulation for fever reduction in children and adults. Rapid absorption and pleasant taste.
+                        </p>
+                        <div class="product-specs">
+                            <strong>Active Ingredient:</strong> Paracetamol 125mg/5ml<br>
+                            <strong>Form:</strong> Liquid Syrup<br>
+                            <strong>Packaging:</strong> Bottle of 100ml
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/b3f02038-008f-4342-8e09-21a45fee249d.png" alt="NyVita-Multivitamin">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Vitamin Supplement</div>
+                        <div class="product-name">NyVita-Multivitamin</div>
+                        <p class="product-description">
+                            Complete daily multivitamin formulation with essential nutrients for overall wellness and immunity.
+                        </p>
+                        <div class="product-specs">
+                            <strong>Composition:</strong> Vitamins A, B, C, D, E, Minerals<br>
+                            <strong>Form:</strong> Tablet<br>
+                            <strong>Packaging:</strong> Bottle of 30 tablets
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/1e2ef58b-0a54-4879-a96a-81ec183d4575.png" alt="DigestiCare Digestive Aid">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Digestive Aid</div>
+                        <div class="product-name">DigestiCare</div>
+                        <p class="product-description">
+                            Probiotics and digestive enzymes for improved gut health. Supports natural digestion process.
+                        </p>
+                        <div class="product-specs">
+                            <strong>Active Ingredient:</strong> Lactobacillus & Bifidobacterium<br>
+                            <strong>Form:</strong> Capsule<br>
+                            <strong>Packaging:</strong> Blister pack of 10
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="service-icon">🧬</div>
+                <h3>Research & Development</h3>
+                <p>Continuous innovation in drug development using cutting-edge technology and scientific expertise. Our R&D team collaborates with leading medical institutions to develop next-generation therapeutic solutions.</p>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🏆</div>
+                <h3>Quality Assurance</h3>
+                <p>Rigorous testing and quality control ensuring all products meet international pharmaceutical standards. Every batch undergoes comprehensive analysis including stability testing and microbiological evaluation.</p>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🚚</div>
+                <h3>Distribution & Logistics</h3>
+                <p>Efficient cold-chain logistics and distribution network covering 50+ cities. We maintain temperature-controlled warehouses and ensure on-time delivery to hospitals, clinics, and pharmacies.</p>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">💚</div>
+                <h3>Healthcare Support</h3>
+                <p>Expert medical consultation, 24/7 customer support, and educational programs for healthcare professionals. Our medical team provides product training and handles adverse event reporting.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <h2>Contact Us</h2>
+            <div class="contact-grid">
+                <!-- Address -->
+                <div class="contact-info">
+                    <h3>📍 Head Office</h3>
+                    <p>
+                        <strong>Nyfinity Pharmaceuticals Pvt. Ltd.</strong><br>
+                        Office No. 501, Fortune Tower<br>
+                        Sardar Patel Road<br>
+                        Ahmedabad, Gujarat 380015<br>
+                        India
+                    </p>
+                </div>
+
+                <!-- Manufacturing Facility -->
+                <div class="contact-info">
+                    <h3>🏭 Manufacturing Facility</h3>
+                    <p>
+                        <strong>Production Unit - Vadodara</strong><br>
+                        Plot No. 45, GIDC Industrial Estate<br>
+                        Vadodara, Gujarat 390024<br>
+                        India
+                    </p>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="contact-info">
+                    <h3>📞 Contact Information</h3>
+                    <p>
+                        <strong>Main Phone:</strong> +91-79-4142-5050<br>
+                        <strong>Toll Free:</strong> 1800-NYFINITY<br>
+                        <strong>General Email:</strong> info@nyfinity.com<br>
+                        <strong>Support Email:</strong> support@nyfinity.com<br>
+                        <strong>Sales Enquiry:</strong> sales@nyfinity.com<br>
+                        <strong>Hours:</strong> Mon - Fri, 9:00 AM - 6:00 PM IST<br>
+                        <strong>Emergency:</strong> +91-79-4142-5099 (24/7)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Nyfinity Pharmaceuticals Pvt. Ltd. All rights reserved.</p>
+        <p>WHO-GMP Certified | ISO 9001:2015 | DCGI Approved | Commitment to Healthcare Excellence</p>
+        <p style="font-size: 0.85rem; margin-top: 1rem; color: #999;">
+            <strong>Certifications:</strong> WHO Good Manufacturing Practice | ISO 9001:2015 | ISO 14001 (Environmental Management)<br>
+            <strong>Regulatory Status:</strong> DCGI Approved | US FDA Compliant | Quarterly Compliance Audits
+        </p>
+        <div class="footer-links">
+            <a href="#about">Privacy Policy</a>
+            <a href="#about">Terms & Conditions</a>
+            <a href="#about">Quality Policy</a>
+            <a href="#contact">Contact Us</a>
+            <a href="#about">Careers</a>
+        </div>
+    </footer>
+
+</body>
+</html>
