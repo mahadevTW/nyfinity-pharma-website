@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nyfinity - Pharmaceutical Excellence</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <style>
         :root {
             --primary-color: #1abc9c;
@@ -49,9 +50,24 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: bold;
             letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: white;
+        }
+
+        .logo img {
+            height: 36px;
+            width: auto;
+            display: block;
+            flex-shrink: 0;
+        }
+
+        .logo span {
+            color: white;
         }
 
         nav ul {
@@ -486,7 +502,10 @@
     <!-- Navigation Header -->
     <header>
         <nav>
-            <div class="logo">NYFINITY</div>
+            <div class="logo">
+                <img src="logo.svg" alt="Nyfinity Pharmaceuticals Logo">
+                <span>NYFINITY</span>
+            </div>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
